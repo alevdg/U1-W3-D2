@@ -81,28 +81,56 @@
     </footer>
     <script>
       /* ESERCIZIO 1
-       Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
-    */
+             Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
+          */
 
-      const changeTitle = function () {};
+      const changeTitle = function (newTitle) {
+        document.querySelector("h1").textContent = newTitle;
+      };
+
+      //verifica
+      changeTitle("Nuovo Titolo Esercizio 06/06/2023");
 
       /* ESERCIZIO 2
-       Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
-    */
+             Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
+          */
 
-      const addClassToTitle = function () {};
+      const addClassToTitle = function () {
+        const title = document.querySelector("h1");
+        title.classList.add("myHeading");
+      };
+
+      //verifica
+      addClassToTitle();
 
       /* ESERCIZIO 3
-       Scrivi una funzione per che cambi il testo dei p figli di un div
-      */
+             Scrivi una funzione per che cambi il testo dei p figli di un div
+            */
 
-      const changePcontent = function () {};
+      const changePcontent = function (newText) {
+        const pElements = document.querySelectorAll("div > p");
+        pElements.forEach((p) => {
+          p.textContent = newText;
+        });
+      };
+
+      // Esempio
+      changePcontent(
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      );
 
       /* ESERCIZIO 4
-       Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
-      */
+             Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
+            */
 
-      const changeUrls = function () {};
+      const changeUrls = function () {
+        const links = document.querySelectorAll("a:not(footer a)");
+        links.forEach((link) => {
+          link.href = "https://www.google.com";
+        });
+      };
+      // verifica
+      changeUrls();
 
       /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
